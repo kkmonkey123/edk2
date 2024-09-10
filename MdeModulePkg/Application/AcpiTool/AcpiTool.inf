@@ -1,0 +1,41 @@
+## @file
+#  Sample UEFI Application Reference EDKII Module.
+#
+#  This is a sample shell application that will print "UEFI Hello World!" to the
+#  UEFI Console based on PCD setting.
+#
+#  It demos how to use EDKII PCD mechanism to make code more flexible.
+#
+#  Copyright (c) 2008 - 2018, Intel Corporation. All rights reserved.<BR>
+#
+#  SPDX-License-Identifier: BSD-2-Clause-Patent
+#
+#
+##
+
+[Defines]
+  INF_VERSION                    = 0x00010005
+  BASE_NAME                      = AcpiTool
+  FILE_GUID                      = 991e587b-ee21-4271-984b-3e9394f3f071
+  MODULE_TYPE                    = UEFI_APPLICATION
+  VERSION_STRING                 = 1.0
+  ENTRY_POINT                    = UefiMain
+
+[Sources]
+  AcpiTool.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+
+[LibraryClasses]
+  UefiApplicationEntryPoint
+  UefiLib
+  PcdLib
+
+[Protocols]
+  gEfiDiskIoProtocolGuid
+  gEfiBlockIoProtocolGuid
+  gEfiDevicePathProtocolGuid
+  gEfiSimpleTextInProtocolGuid
+  gEfiAcpiSdtProtocolGuid
